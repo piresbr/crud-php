@@ -7,4 +7,3 @@
     }else {
         echo "Função indisponível no momento. Tente novamente mais tarde.";
     }
-?>

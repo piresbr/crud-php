@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    require_once "connect.php";
-    if(isset($_POST["name"]) && isset($_POST["email"])){
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $sql = "UPDATE user SET `name`= '$name', `email`= '$email' WHERE id= ".$_GET["id"];
-        if (mysqli_query($conn, $sql)) {
-            header("location: index.php");
-        } else {
-            echo "Função indisponível no momento. Tente novamente mais tarde.";
-        }
+require_once "connect.php";
+if (isset($_POST["name"]) && isset($_POST["email"])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $sql = "UPDATE user SET `name`= '$name', `email`= '$email' WHERE id= " . $_GET["id"];
+    if (mysqli_query($conn, $sql)) {
+        header("location: index.php");
+    } else {
+        echo "Função indisponível no momento. Tente novamente mais tarde.";
     }
+}
 ?>
 
 <head>
@@ -32,7 +32,7 @@
             <div class="container table-responsive">
                 <?php
                 require_once 'connect.php';
-                $sql_query = "SELECT * FROM user WHERE id = ".$_GET["id"];
+                $sql_query = "SELECT * FROM user WHERE id = " . $_GET["id"];
                 if ($result = $conn->query($sql_query)) {
                     while ($row = $result->fetch_assoc()) {
                         $Id = $row['id'];

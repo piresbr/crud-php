@@ -10,4 +10,3 @@
     if($conn === false){
         die("ERROR: NÃO FOI POSSÍVEL CONECTAR" . mysqli_connect_error());
     }
-?>
